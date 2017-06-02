@@ -6,6 +6,7 @@ window.
 Think of this as a broiler plate plugin. Feel free to modify the python code
 as you see fit in your particular use case.
 
+
 ## Requirements
 
 This plugin few third party applications to work:
