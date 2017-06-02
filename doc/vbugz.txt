@@ -1,0 +1,46 @@
+*vbugz.txt* Get Bugzilla bugID associated with a line 
+
+Author: Sridhar V. Iyer <http://sridharv.net/>
+
+===============================================================================
+CONTENTS                                                                *vbugz*
+
+    1. Intro .................................................... |vbugz-intro|
+    2. Requirements ...................................... |vbugz-requirements|
+    3. Usage .................................................... |vbugz-usage|
+    4. Licence ................................................ |vbugz-licence|
+===============================================================================
+1. Intro                                                          *vbugz-intro*
+
+If your commit message summary is formatted as "Bug <BUGID>:", this plugin can
+get the Bug details associated with the current line and display that in a separate
+window.
+Think of this as a broiler plate plugin. Feel free to modify the python code
+as you see fit in your particular use case.
+
+2. Requirements                                            *vbugz-requirements*
+
+This plugin few third party applications to work:
+git: <https://git-scm.com/>
+pybugz: <https://github.com/williamh/pybugz>
+
+Git is used to pull the blame information for the current line. This is then parsed
+to obtain the bugID, which is then passed to pybugz. Pybugz then pulls the bug
+information from bugzilla.
+
+Make sure that both git and pybugz are working before you use this plugin.
+
+3. Usage                                                          *vbugz-usage*
+
+:Vbugz		Bring up the bug details associated with the current line on a
+                separate window.
+4. Licence                                                      *vbugz-licence*
+License: Same terms as Vim itself (see |license|)
+
+5. About                                                          *vbugz-about*
+
+Grab the latest version or report a bug on GitHub:
+
+http://github.com/codeyman/vbugz
+
+vim:ft=help
