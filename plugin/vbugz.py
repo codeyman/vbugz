@@ -3,13 +3,17 @@
 # Date:         2017/06/01 20:03
 # Author:       Sridhar V Iyer
 
-
+import os
 from subprocess import check_output
 
 def vbugz_helper(filen,lineno):
     bugid = 0
     output = "ENOBUG"
-    out = check_output(['git', '--no-pager', 'blame', filen, '-L{},{}'.format(lineno + 1, lineno + 1), '-p'])
+    try:
+        with open(os.devnull, 'w') as devnull:
+            out = check_output(['git', '--no-pager', 'blame', filen, '-L{},{}'.format(lineno + 1, lineno + 1), '-p'], stderr=devnull)
+    except:
+        out = "ENOBUG"
     lines = out.split('\n')
     for line in lines:
         nl = line.strip()

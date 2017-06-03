@@ -16,6 +16,7 @@ from vbugz import vbugz_helper
 bugid,ret=vbugz_helper(vim.current.buffer.name,vim.current.range.start)
 if bugid != 0:
     vim.command("new")
+    vim.command("set filetype=vbugzC")
     vim.command("setlocal buftype=nofile")
     lines = ret.split('\n')
     vim.current.buffer.append(["BUG ID: {}".format(bugid), "===================", "    "])
