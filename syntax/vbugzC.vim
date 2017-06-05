@@ -13,6 +13,7 @@ syn case match
 
 
 syn match vbkeys '^.\{-}:' contains=vbelems
+syn match vTitle '^Title.\{-}:.*$'
 
 
 "-------------------------------------
@@ -21,3 +22,4 @@ syn match vbkeys '^.\{-}:' contains=vbelems
 " things with one-to-one mapping
 hi def link vbkeys Keyword
 hi def link vbelems Statement
+hi def link vTitle Todo
